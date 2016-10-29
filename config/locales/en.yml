@@ -21,3 +21,22 @@
 
 en:
   hello: "Hello world"
+  layout: 
+    header:
+      logo: "Training Test System"
+      home: "Home"
+      login: "Login"
+    footer:
+      title: "Training Test System"
+      date:
+        formats:
+          short: "%b %d"
+      contact: "http://recruit.framgia.vn/"
+  static_pages:
+    home:
+      logo_app: "Training Test System"
+      title_page: "Home"
+      content: "Welcome to Training test system. Sign up free to do test."
+      button: "Sign up"
+  helper:
+    base_title: "Training Test System"
