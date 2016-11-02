@@ -1,31 +1,19 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   layout: 
     header:
+      log_in: "Log in"
       logo: "Training Test System"
       home: "Home"
       login: "Login"
+      user: "Users"
+      profile: "Profile"
+      logout: "Log out"
+      contribute: "Add question"
+      subject: "Subjects"
+      button: "Sign up"
+      user: "Users"
+      account: "Account"
     footer:
       title: "Training Test System"
       date:
@@ -37,6 +25,19 @@ en:
       logo_app: "Training Test System"
       title_page: "Home"
       content: "Welcome to Training test system. Sign up free to do test."
-      button: "Sign up"
   helper:
     base_title: "Training Test System"
+    gravatar: "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+    gra: "gravatar"
+  sessions:
+    log_in: "Log in"
+    new: "New user ?"
+    form_title: "Log in"
+    button: "Log in"
+    signup: "Sign up now"
+    danger: "Invalid email or password"
+    signup_success: "Sign up successfull!"
+    login_success: "Log in successfull!"
+  form_title_signup: "Sign up"
+  share:
+    error: "The form contains %{error_count} errors"
