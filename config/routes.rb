@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post "signup", to: "users#create"
   resources :users, except: [:index, :destroy]
 
+  namespace :admin do
+    resources :users, only: [:index, :destroy, :show]
+  end
 end

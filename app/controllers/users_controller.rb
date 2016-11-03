@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: :show
+  before_action :logged_in_user, except: [:new, :create, :show]
+  before_action :find_user, except: [:new, :create, :index]
+  before_action :valid_user, only: [:edit, :update]
 
   def show
   end
@@ -20,17 +22,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "controllers.success"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   private
+  def user_params
+    params.require(:user).permit :name, :email, :password,
+      :password_confirmation
+  end
+  
+  def valid_user
+    redirect_to root_url unless current_user.current_user? @user
+  end
+
   def find_user
     @user = User.find_by id: params[:id]
     if @user.nil?
       flash.now[:danger] = t "sessions.danger"
       redirect_to root_path
     end
-  end
-
-  def user_params
-    params.require(:user).permit :name, :email, :password,
-      :password_confirmation
   end
 end
