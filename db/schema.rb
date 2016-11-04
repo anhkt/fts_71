@@ -13,22 +13,22 @@
 ActiveRecord::Schema.define(version: 20161031040051) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "content"
-    t.boolean "is_correct"
-    t.integer "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "content"
+    t.boolean  "is_correct"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
   end
 
   create_table "exams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.integer "time_start"
-    t.integer "time_end"
-    t.string "status"
-    t.integer "score"
-    t.integer "user_id"
-    t.integer "subject_id"
+    t.string   "name"
+    t.integer  "time_start"
+    t.integer  "time_end"
+    t.string   "status"
+    t.integer  "score"
+    t.integer  "user_id"
+    t.integer  "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_exams_on_subject_id", using: :btree
@@ -36,44 +36,42 @@ ActiveRecord::Schema.define(version: 20161031040051) do
   end
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "content"
-    t.integer "subject_id"
+    t.string   "content"
+    t.integer  "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_questions_on_subject_id", using: :btree
   end
 
   create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "exam_id"
-    t.integer "question_id"
-    t.integer "answer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_results_on_answer_id", using: :btree
+    t.integer  "exam_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["exam_id"], name: "index_results_on_exam_id", using: :btree
     t.index ["question_id"], name: "index_results_on_question_id", using: :btree
   end
 
   create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.integer "duration"
-    t.integer "number_question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "duration"
+    t.integer  "number_question"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "suggest_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean "is_correct"
-    t.integer "suggest_question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "is_correct"
+    t.integer  "suggest_question_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.index ["suggest_question_id"], name: "index_suggest_answers_on_suggest_question_id", using: :btree
   end
 
   create_table "suggest_questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "content"
-    t.integer "user_id"
-    t.integer "subject_id"
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_suggest_questions_on_subject_id", using: :btree
@@ -81,19 +79,18 @@ ActiveRecord::Schema.define(version: 20161031040051) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.string "email"
-    t.boolean "is_admin", default: false
-    t.string "password_digest"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "is_admin",        default: false
+    t.string   "password_digest"
+    t.string   "password"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_foreign_key "answers", "questions"
   add_foreign_key "exams", "users"
   add_foreign_key "questions", "subjects"
-  add_foreign_key "results", "answers"
   add_foreign_key "results", "exams"
   add_foreign_key "results", "questions"
   add_foreign_key "suggest_answers", "suggest_questions"
