@@ -1,0 +1,24 @@
+<div class="form-group choice_question">
+  <div class="form-group">
+    <%= f.label t("admin.answer.answer") %>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-8">
+      <%= f.text_field :content, label: false, class: "form-control" %>
+    </div>
+    <div class="col-md-3 space-top-remove">
+      <div class="form-group">
+        <%= f.check_box :is_correct, class: "answers_checkbox" %>
+      </div>
+      <div class="form-group">
+        <%= f.hidden_field :_destroy %>
+      </div>
+      <div class="form-group">
+        <%= f.label :true %>
+      </div>
+    </div>
+    <div class="col-md-1 space-top-remove">
+      <%= link_to_remove_fields t("admin.answer.remove"), f %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<% provide :title, t("admin.question.edit") %>
+<% provide :button_text, t("admin.question.button") %>
+<h1><%= t "admin.question.edit" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @question] do |f| %>
+      <%= render "shared/error_messages", object: @question %>
+      <div class="for-group">
+	    <%= f.label :subject %>
+        <%= f.collection_select :subject_id, Subject.all, :id, :name %>
+      </div>
+
+      <div class="for-group">
+	    <%= f.label :content %>
+	    <%= f.text_area :content, rows: 4, class: "form-control" %>
+      </div>
+	  <%= f.submit t("admin.question.update") , class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

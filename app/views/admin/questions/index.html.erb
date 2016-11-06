@@ -1,0 +1,35 @@
+<% provide :title, t("admin.question.title") %>
+<h1><%= t "admin.question.h1" %></h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t "admin.question.stt" %></th>
+      <th><%= t "admin.question.subject_id" %></th>
+      <th><%= t "admin.question.content" %></th>
+      <th><%= t "admin.question.answer" %></th>
+      <th><%= t "admin.question.action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each.with_index 1 do |question, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to question.subject.name %></td>
+        <td><%= question.content %></td>
+        <td></td>
+      	<td>
+      	  <% unless current_user.current_user? @user %>
+            <%= link_to t("admin.question.delete"), [:admin, question],
+              method: :delete,
+              data: {confirm: t("controllers.admin.sure")} %> | 
+            <%= link_to t("admin.question.edit"),
+              edit_admin_question_path(question) %>
+          <% end %>
+      	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t("admin.question.new"), new_admin_question_path(@question) %>

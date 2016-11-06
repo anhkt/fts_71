@@ -7,6 +7,7 @@ en:
       email: "Email"
       create: "Create at"
       all_users: "All Users"
+      action: "Action"
     subject:
       title: "Subjects"
       stt: "STT"
@@ -19,6 +20,32 @@ en:
       button: "Update"
       create: "New subject"
       button2: "Add"
+    question:
+      title: "Manage question"
+      h1: "All question"
+      new: "New question"
+      stt: "STT"
+      content: "Content"
+      answer: "Answer"
+      action: "Action"
+      delete: "Delete"
+      edit: "Edit"
+      button2: "Add"
+      button: "Update"
+      edit: "Edit"
+      english: "English"
+      math: "Math"
+      physical: "Physical"
+      subject_id: "Subject"
+      question: "Question"
+      create: "Create"
+      cancel: "Cancel"
+      update: "Update"
+    answer:
+      add: "+Add"
+      add_answer: "Add answer"
+      remove: "Remove"
+      answer: "Answer"
   users: 
     change: "Change"
     edit:
@@ -31,7 +58,7 @@ en:
       logo: "Training Test System"
       home: "Home"
       login: "Login"
-      user: "Users"
+      exam: "Exams"
       profile: "Profile"
       logout: "Log out"
       contributes: "Add question"
@@ -40,6 +67,8 @@ en:
       user: "Users"
       account: "Account"
       allusers: "All Users"
+      questions: "Questions"
+      exams: "Exams"
     footer:
       title: "Training Test System"
       date:
@@ -71,6 +100,7 @@ en:
     success: "Profile is updated!"
     admin:
       subject:
+        ok: "Choose subject to add question"
         add: "Add subject"
         create: "Create subject"
         s1: "English"
@@ -80,6 +110,7 @@ en:
         fail: "Subject is not created!"
         update: "Subject is updated!"
         delete: "Delete?"
+        danger: "Subject not found"
         flash: 
           delete:
             success: "Subject is deleted!"
@@ -96,3 +127,12 @@ en:
       sure: "Are you sure?"
       danger: "User not found!"
       login: "Please log in!"
+      question:
+        create: "Question is created!"
+        fail: " Question error!"
+        success: "Qestion is updated!"
+        error: "Qestion is not updated!"
+        not: "Question is not found!"
+        danger: "Question not found!"
+        delete: "Question is deleted!"
+        title: "Question"

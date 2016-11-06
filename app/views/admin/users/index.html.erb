@@ -7,12 +7,13 @@
       <th><%= t "admin.users.id" %></th>
       <th><%= t "admin.users.name" %></th>
       <th><%= t "admin.users.email" %></th>
+      <th><%= t "admin.users.action" %></th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each.with_index do |user, index| %>
+    <% @users.each.with_index 1 do |user, index| %>
       <tr>
-        <td><% user.id %></td>
+        <td><%= index %></td>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td>

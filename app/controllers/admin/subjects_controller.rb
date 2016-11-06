@@ -56,6 +56,7 @@ class Admin::SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit :name, :duration, :number_question
+    params.require(:subject).permit :name, :duration, :number_question,
+      questions_attributes: [:id, :content, :subject_id]
   end
 end
