@@ -1,5 +1,17 @@
 en:
   hello: "Hello world"
+  admin: 
+    users:
+      id: "STT"
+      name: "Name"
+      email: "Email"
+      create: "Create at"
+      all_users: "All Users"
+  users: 
+    edit:
+      title: "Update Profile"
+      submit: "Update"
+    create: "Create my account"
   layout: 
     header:
       log_in: "Log in"
@@ -9,11 +21,12 @@ en:
       user: "Users"
       profile: "Profile"
       logout: "Log out"
-      contribute: "Add question"
+      contributes: "Add question"
       subject: "Subjects"
       button: "Sign up"
       user: "Users"
       account: "Account"
+      allusers: "All Users"
     footer:
       title: "Training Test System"
       date:
@@ -28,12 +41,12 @@ en:
   helper:
     base_title: "Training Test System"
     gravatar: "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
-    gra: "gravatar"
   sessions:
     log_in: "Log in"
     new: "New user ?"
     form_title: "Log in"
     button: "Log in"
+    remember: "Remember me on computer"
     signup: "Sign up now"
     danger: "Invalid email or password"
     signup_success: "Sign up successfull!"
@@ -41,3 +54,18 @@ en:
   form_title_signup: "Sign up"
   share:
     error: "The form contains %{error_count} errors"
+  controllers:
+    success: "Profile is updated!"
+    admin:
+      users:
+        delete: "Delete?"
+        flash: 
+          success:
+            delete: "User is deleted!"
+          fail:
+            delete: "User is not deleted!"
+          danger: "Please log in!"
+      delete: "Delete"
+      sure: "Are you sure?"
+      danger: "User not found!"
+      login: "Please log in!"
