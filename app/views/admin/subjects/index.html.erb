@@ -1,0 +1,34 @@
+<% provide :title, t("admin.subject.title") %>
+<h1><%= t "admin.subject.title" %></h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t "admin.subject.stt" %></th>
+      <th><%= t "admin.subject.name" %></th>
+      <th><%= t "admin.subject.number" %></th>
+      <th><%= t "admin.subject.duration" %></th>
+      <th><%= t "admin.subject.action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each.with_index do |subject, index| %>
+      <tr>
+        <td><%= subject.id %></td>
+        <td><%= link_to subject.name, [:admin, subject] %></td>
+        <td><%= subject.number_question %></td>
+        <td><%= subject.duration %></td>
+        <td>
+          <% unless current_user.current_user? @user %>
+            <%= link_to t("admin.subject.delete"), [:admin, subject], method: :delete,
+              data: {confirm: t("controllers.admin.subject.delete")} %>
+            <%= link_to t("admin.subject.edit"),
+              edit_admin_subject_path(subject) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t("admin.subject.new"), new_admin_subject_path(@subject) %>

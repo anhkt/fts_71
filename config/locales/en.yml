@@ -7,7 +7,20 @@ en:
       email: "Email"
       create: "Create at"
       all_users: "All Users"
+    subject:
+      title: "Subjects"
+      stt: "STT"
+      name: "Name"
+      number: "Question number"
+      duration: "Duration"
+      action: "Action"
+      edit: "Edit"
+      delete: "Delete"
+      button: "Update"
+      create: "New subject"
+      button2: "Add"
   users: 
+    change: "Change"
     edit:
       title: "Update Profile"
       submit: "Update"
@@ -57,6 +70,20 @@ en:
   controllers:
     success: "Profile is updated!"
     admin:
+      subject:
+        add: "Add subject"
+        create: "Create subject"
+        s1: "English"
+        s2: "Math"
+        danger: "Subject is not found!"
+        success: "Subject is created!"
+        fail: "Subject is not created!"
+        update: "Subject is updated!"
+        delete: "Delete?"
+        flash: 
+          delete:
+            success: "Subject is deleted!"
+            fail: "Subject is not found!"
       users:
         delete: "Delete?"
         flash: 

@@ -17,8 +17,8 @@
         <td><%= user.email %></td>
         <td>
           <% unless current_user.current_user? user %>
-            <%= link_to t("users.admin.delete"), [:admin, user], method: :delete,
-              data: {confirm: t("controllers.admin.users.delete")} %>
+            <%= link_to t("controllers.admin.delete"), [:admin, user], method: :delete,
+              data: {confirm: t("controllers.admin.sure")} %>
           <% end %>
         </td>
       </tr>
